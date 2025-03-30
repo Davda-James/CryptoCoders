@@ -1,3 +1,6 @@
+# from fastapi import FastAPI, HTTPException, Request
+# from fastapi.middleware.cors import CORSMiddleware
+# from pydantic import BaseModel,Field
 from flask import Flask, jsonify, request
 from langchain.schema import Document
 from multi_agent import chat_agent,summarize_text, extract_pagecontent
@@ -6,11 +9,77 @@ from fetch_papers import get_research_papers
 from faiss_db import load_faiss_db
 from dotenv import load_dotenv
 import os 
+# import uvicorn
+# from pyngrok import ngrok
+
 load_dotenv()
 
 app = Flask(__name__)
 CORS(app, supports_credentials=False, origins="*")  # Allow all origins
 app.config['CORS_HEADERS'] = 'Content-Type'
+
+# app = FastAPI()
+
+# # CORS Middleware
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["*"],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+
+# # Request Models
+# class ChatRequest(BaseModel):
+#     chat_query: str
+#     generate_new: bool
+#     k: int
+#     pdf_url: str
+
+# class FetchDocsRequest(BaseModel):
+#     query: str
+#     max_papers: int = 2   # Default value
+
+
+
+# @app.get("/")
+# async def home():
+#     return {"message": "Welcome to the Research Paper Chatbot API"}
+
+# @app.post("/agent/chat")
+# async def chat(request: ChatRequest):
+#     most_similar_chunks = load_faiss_db(
+#         request.chat_query, k=request.k, generate_new=request.generate_new, pdf_url=request.pdf_url
+#     )
+#     context = "\n\n".join([doc.page_content for doc in most_similar_chunks])
+#     final_prompt = f"""
+#         Based on the following research content:\n\n{context}\n\nAnswer the question: {request.chat_query}
+#         Tools you can use: [web_search, research_paper_search, deep_research_search, and anything required].
+#         Act as a chatbot, responding in a conversational manner.
+#         Provide clear, concise answers and relevant links if necessary.
+#         Paper URL: {request.pdf_url}
+#     """
+#     final_chatbot_reply = chat_agent(final_prompt)
+#     return {"response": final_chatbot_reply.content}
+
+# @app.post("/agent/fetch_docs")
+# async def fetch_documents(request: FetchDocsRequest):
+#     search_results = get_research_papers(request.query, min(request.max_papers,10))
+#     summary_of_search_results = summarize_text(extract_pagecontent(search_results))
+    
+#     for i, doc in enumerate(search_results):
+#         doc["summary"] = summary_of_search_results[i]
+    
+#     return search_results
+
+# ngrok.kill()
+# port = int(os.getenv("PORT", 8000))
+# public_url = ngrok.connect(port).public_url
+# print(f"Public URL: {public_url}")
+
+# if __name__ == "__main__":    
+#     uvicorn.run(app, host="0.0.0.0", port=port)
+
 
 
 
@@ -85,3 +154,8 @@ def fetch_documents():
 
     # return jsonify(response_data), 200
     return jsonify(search_results), 200
+
+port=int(os.getenv("PORT", 5000))
+if __name__=="__main__":
+    app.run(host="0.0.0.0",port=port,debug=False)
+
