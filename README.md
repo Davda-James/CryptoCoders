@@ -43,7 +43,7 @@ This will run the server and host the backend along with agents locally and then
 ### Analytics
 ![Analytics](./images/image5.jpg)
 
-### Link to frontend : 
+### Link to frontend : https://github.com/anishk85/frosthackFrontend
 
 ### Link to video explaination and showcase of our project
 ``` bash
