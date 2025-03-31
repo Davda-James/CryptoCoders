@@ -45,3 +45,7 @@ This will run the server and host the backend along with agents locally and then
 
 ### Link to frontend : 
 
+### Link to video explaination and showcase of our project
+``` bash
+https://youtu.be/XMh5Vm8Xtbc
+```
