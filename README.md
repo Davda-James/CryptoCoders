@@ -1,6 +1,6 @@
 Flowchart of agent :
 
-![Flowchart of Agent](./images/flow.jpg)
+![Flowchart of Agent](./images/flow.png)
 
 Research AI Agent
 
