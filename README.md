@@ -1,11 +1,40 @@
-Flowchart of agent :
+<div>
+    <img src="./images/logo.png">
+</div>
 
-![Flowchart of Agent](./images/flow.png)
+[![Huggingface Hub](https://img.shields.io/badge/huggingface--hub-0.29.3-blue)](https://github.com/huggingface/huggingface_hub)
+[![LangChain Huggingface](https://img.shields.io/badge/langchain--huggingface-0.1.2-blue)](https://github.com/langchain-ai/langchain)
+[![Sentence-Transformers](https://img.shields.io/badge/sentence--transformers-4.0.1-blue)](https://www.sbert.net/)
+[![LangChain Google GenAI](https://img.shields.io/badge/langchain--google--genai-2.1.2-blue)](https://github.com/langchain-ai/langchain)
+[![PyMongo](https://img.shields.io/badge/PyMongo-4.11.3-blue)](https://pymongo.readthedocs.io/)
+[![FAISS-CPU](https://img.shields.io/badge/faiss--cpu-1.10.0-blue)](https://github.com/facebookresearch/faiss)
+[![arXiv](https://img.shields.io/badge/arxiv-2.1.3-blue)](https://arxiv.org/)
+[![PyMuPDF](https://img.shields.io/badge/PyMuPDF-1.25.4-blue)](https://pymupdf.readthedocs.io/)
+[![Gunicorn](https://img.shields.io/badge/gunicorn-23.0.0-blue)](https://gunicorn.org/)
+[![Flask-CORS](https://img.shields.io/badge/Flask--CORS-5.0.1-blue)](https://flask-cors.readthedocs.io/)
+![Requests](https://img.shields.io/badge/requests-2.32.3-blue)
+![Python-dotenv](https://img.shields.io/badge/python--dotenv-1.1.0-blue)
 
-Research AI Agent
+
+## Table of Contents
+- [Pipeline](#pipeline)
+- [Setting up Project](#setup)
+- [Overview of frontend](#overview-of-frontend)
+  - [Landing Page](#landing-page)
+  - [Home Page](#home-page)
+  - [Chat Environment](#chat-environment-for-each-research-paper-based-on-that-paper)
+  - [Summary Generated](#summar)
+- [Analytics](#analytics)
+- [Link to frontend](#link-to-frontend--httpsgithubcomanishk85frosthackfrontend)
+- [Demo Video](#link-to-video-explaination-and-showcase-of-our-project)
+
+## Pipeline
+![Pipeline](./images/flow.png)
 
 
-## Install requirements.txt
+## Setup
+
+### Install requirements.txt
 ```bash
 pip install -r requirements.txt
 ```
@@ -13,7 +42,7 @@ pip install -r requirements.txt
 ### Required .env
 -   There is example.env file, rename it to .env and add values to the required env variables.
 
-## Backend 
+### Backend 
 
 ### How to set up the backend which exposes the API's to call agents ?
 ```bash
