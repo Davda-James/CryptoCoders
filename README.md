@@ -4,8 +4,6 @@ Flowchart of agent :
 
 Research AI Agent
 
-## Agent
--   So we are using **heurist AI agent framework** for using agents and building using it. It provides a variety of agents to work upon like Deep Reasearch Agent , telegram agent and much more etc.
 
 ## Install requirements.txt
 ```bash
